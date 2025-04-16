@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>File Sharing App</title>
+  </head>
+  <body>
+    <h1>Upload a File</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li style="color: red;">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+    </form>
+  </body>
+</html>
